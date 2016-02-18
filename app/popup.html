@@ -1,0 +1,52 @@
+<html lang="en" class="no-js"ng-app="myApp"><head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>Monument</title>
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
+    <link rel="stylesheet" href="/styles/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles/demo.css">
+    <link href="/styles/icons" rel="stylesheet">
+
+    </head>
+    <body class="" ng-controller="AppCtrl">
+            <md-progress-linear md-mode="indeterminate" ng-show="isLoading"></md-progress-linear>
+            <div class="bar-rainbow"></div>  
+            <form style="margin:0 5px;">
+                <div layout="row">
+                  <md-input-container>
+                    <label>Select Group</label>
+                    <md-select style="width: 140px;" ng-model="post.group">
+                      <md-option ng-repeat="group in groups" value="{{group._id}}">{{group.name}}</md-option>
+                    </md-select>
+                  </md-input-container>
+                
+             
+                    <input ng-model="post.url" style="display:none !important;" id="url" type="text" />
+                    <input ng-model="post.title" style="display:none !important;" id="title" type="text" />
+                    <input ng-model="post.description" style="display:none !important;" id="description" type="text" />
+                    <input ng-model="post.image" style="display:none !important;" id="image" type="text" />
+                    <input ng-model="post.group" style="display:none !important;" id="group" type="text" />
+                    <button style="margin-top: 19px;" class="md-button md-ink-ripple" ng-click="addPost()">
+                        Add Post
+                    </button>
+                </div>
+            </form>
+            <div id="message"></div>
+            <script src="/scripts/keymaster.js"></script>
+            <script src="/scripts/background.js"></script>
+            <script src="/scripts/content.js"></script>
+    <script src="/scripts/jquery-1.11.3.min.js"></script>
+    <script src="/scripts/angular.min.js"></script>
+    <script src="/scripts/angular-animate.min.js"></script>
+      <script src="/scripts/angular-aria.min.js"></script>
+      <script src="/scripts/angular-material-icons.min.js"></script> 
+      <script src="/scripts/angular-material.min.js"></script>
+      <script src="/scripts/angular-ui-router.min.js"></script>
+
+      <script src="/scripts/angular-resource.min.js"></script>
+      <script src="/scripts/sortable.js"></script>
+    <script src="controllers/controller.js"></script>
+
+</body></html>
